@@ -39,6 +39,7 @@ def rotate(speed, duration, direction):
     sleep(duration)
 
 
+# do the following moves
 '''
 Moves forward at half of maximum speed for 2 seconds
 Turns left 90°
@@ -51,4 +52,14 @@ Moves backward at 75% of maximum speed for 2 seconds
 
 def custom_move():
   linear(0.5, 2, 'forward')
-  turn(90, 
+  turn(90, 0, 'left')
+  linear(0.75, 2, 'forward')
+  rotate(0.5, 2, 'cw')
+  linear(0.5, 2, 'forward')
+  turn(90, 0, 'right')
+  linear(0.75, 2, 'backward')
+
+try:
+  custom_move()
+except KeyboardInterrupt:
+  quit()

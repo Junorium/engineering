@@ -50,13 +50,38 @@ Turns right 90°
 Moves backward at 75% of maximum speed for 2 seconds
 '''
 
+# print before moves are performed
+'''
+The movement the robot is executing
+The actual speed of left motor (positive value for forward spinning, negative value for backward spinning)
+The actual speed of right motor (positive value for forward spinning, negative value for backward spinning)
+Duration of movement (in milliseconds)
+Direction of movement:
+“Forward”, “Backward”, or “Stop” for moving linearly
+“Left” or “Right” for turning
+“CW” or “CCW” for rotating in place
+'''
+
 def custom_move():
+  print('Linear movement: L: 0.5, R: 0.5 for 2000ms, Forward')
   linear(0.5, 2, 'forward')
-  turn(90, 0, 'left')
+
+  print('Turn: L: 0, R: 0.5 for 2000m, Left')
+  turn(90, 2, 'left')
+
+  print('Linear movement: L: 0.75, R: 0.75 for 2000ms, Forward')
   linear(0.75, 2, 'forward')
+
+  print('Rotate: L: 0.5, R: -0.5 for 2000ms, Clockwise')
   rotate(0.5, 2, 'cw')
+
+  print('Linear movement: L: 0.5, R: 0.5 for 2000ms, Forward')
   linear(0.5, 2, 'forward')
-  turn(90, 0, 'right')
+
+  print('Turn: L: 0.5, R: 0 for 2000ms, Right')
+  turn(90, 2, 'right')
+
+  print('Linear movement: L: -0.75, R: -0.75 for 2000ms, Backward')
   linear(0.75, 2, 'backward')
 
 try:
